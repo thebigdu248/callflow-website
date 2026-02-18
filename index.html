@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CallFlow — 24/7 AI Receptionist for Service Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --navy-mid: #1a3260;
+    --blue: #1e4db7;
+    --blue-light: #2d62e0;
+    --accent: #2d62e0;
+    --accent-hover: #1a4fc4;
+    --text: #0f1f3d;
+    --text-mid: #4a5568;
+    --text-light: #718096;
+    --border: #e2e8f0;
+    --bg: #ffffff;
+    --bg-soft: #f7f9fc;
+    --bg-card: #ffffff;
+    --green: #16a34a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, .nav-brand {
+    font-family: 'Syne', sans-serif;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  .nav-brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-brand span {
+    color: var(--accent);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 8px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 100px 0 90px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(45, 98, 224, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(45, 98, 224, 0.08);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.3); }
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    max-width: 680px;
+    margin-bottom: 22px;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-mid);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 18px rgba(45, 98, 224, 0.28);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(45, 98, 224, 0.36);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1.5px solid var(--border);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(45, 98, 224, 0.04);
+    transform: translateY(-2px);
+  }
+
+  .play-icon {
+    width: 18px;
+    height: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--navy);
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: background 0.2s;
+  }
+
+  .btn-secondary:hover .play-icon { background: var(--accent); }
+
+  .play-icon::after {
+    content: '';
+    border-style: solid;
+    border-width: 4px 0 4px 7px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 1px;
+  }
+
+  .hero-trust {
+    margin-top: 52px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.82rem;
+    color: var(--text-light);
+    font-weight: 400;
+  }
+
+  .trust-check {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(22, 163, 74, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .trust-check::after {
+    content: '';
+    width: 5px;
+    height: 3px;
+    border-left: 1.5px solid var(--green);
+    border-bottom: 1.5px solid var(--green);
+    transform: rotate(-45deg) translateY(-1px);
+    display: block;
+  }
+
+  .trust-sep { color: var(--border); font-size: 1.1rem; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 88px 0; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 18px;
+  }
+
+  .section-body {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 560px;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* ── PROBLEM ── */
+  .problem { background: var(--navy); }
+
+  .problem .section-label { color: rgba(255,255,255,0.45); }
+  .problem .section-title { color: #fff; }
+  .problem .section-body { color: rgba(255,255,255,0.65); max-width: 100%; margin-bottom: 40px; }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 44px;
+  }
+
+  .problem-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 12px;
+    padding: 24px 26px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    transition: background 0.2s;
+  }
+
+  .problem-card:hover { background: rgba(255,255,255,0.08); }
+
+  .prob-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(255, 100, 100, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .prob-text strong {
+    display: block;
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .prob-text span {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.5;
+  }
+
+  /* ── SOLUTION ── */
+  .solution { background: var(--bg-soft); }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .solution-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .solution-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 0.95rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .sol-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: rgba(45, 98, 224, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .sol-dot span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: 'Syne', sans-serif;
+  }
+
+  .solution-visual {
+    background: var(--navy);
+    border-radius: 18px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .solution-visual::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(45, 98, 224, 0.2);
+  }
+
+  .call-mock {
+    position: relative;
+    z-index: 1;
+  }
+
+  .call-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .call-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .call-info strong {
+    display: block;
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .call-info span {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .call-status {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    color: var(--green);
+    background: rgba(22, 163, 74, 0.12);
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .call-status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  .call-items { display: flex; flex-direction: column; gap: 10px; }
+
+  .call-item {
+    background: rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .call-item-icon { font-size: 0.9rem; opacity: 0.8; }
+
+  .call-item-text strong {
+    display: block;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .call-item-text span {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── HOW IT WORKS ── */
+  .how { background: var(--bg); }
+
+  .steps-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    margin-top: 52px;
+    position: relative;
+  }
+
+  .steps-row::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: calc(16.6% + 20px);
+    right: calc(16.6% + 20px);
+    height: 1px;
+    background: repeating-linear-gradient(90deg, var(--accent) 0, var(--accent) 6px, transparent 6px, transparent 14px);
+    opacity: 0.35;
+  }
+
+  .step {
+    text-align: center;
+    padding: 0 28px;
+    position: relative;
+  }
+
+  .step-num {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .step:hover .step-num { background: var(--accent); transform: translateY(-3px); }
+
+  .step h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .step p {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ── PRICING ── */
+  .pricing { background: var(--bg-soft); }
+
+  .pricing-center { display: flex; justify-content: center; margin-top: 44px; }
+
+  .price-card {
+    background: var(--bg-card);
+    border: 1.5px solid var(--border);
+    border-radius: 20px;
+    padding: 44px 48px;
+    max-width: 460px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(15, 31, 61, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .price-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 56px rgba(15, 31, 61, 0.14);
+  }
+
+  .price-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .price-plan {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 16px;
+  }
+
+  .price-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .price-dollar {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-top: 6px;
+  }
+
+  .price-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .price-desc {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-bottom: 28px;
+    font-weight: 300;
+  }
+
+  .price-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  .price-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .price-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.92rem;
+    color: var(--text-mid);
+  }
+
+  .feat-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgba(22, 163, 74, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .feat-check::after {
+    content: '';
+    width: 6px;
+    height: 4px;
+    border-left: 1.5px solid var(--green);
+    border-bottom: 1.5px solid var(--green);
+    transform: rotate(-45deg) translateY(-1px);
+    display: block;
+  }
+
+  .price-note {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 14px;
+  }
+
+  .btn-primary.full { width: 100%; justify-content: center; }
+
+  /* ── FAQ ── */
+  .faq { background: var(--bg); }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 44px;
+  }
+
+  .faq-item {
+    background: var(--bg-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 26px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .faq-item:hover {
+    border-color: rgba(45, 98, 224, 0.3);
+    box-shadow: 0 4px 20px rgba(45, 98, 224, 0.07);
+  }
+
+  .faq-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+  }
+
+  .faq-item p {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--navy);
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(45, 98, 224, 0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(1.9rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .final-cta p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 36px;
+    font-weight: 300;
+    position: relative;
+  }
+
+  .final-cta .btn-primary {
+    position: relative;
+    font-size: 1.05rem;
+    padding: 16px 36px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a1628;
+    padding: 44px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-brand strong {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .footer-brand span {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    section { padding: 64px 0; }
+    .hero { padding: 72px 0 64px; }
+
+    .problem-grid { grid-template-columns: 1fr; }
+
+    .solution-grid {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .solution-visual { order: -1; }
+
+    .steps-row {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .steps-row::before { display: none; }
+
+    .faq-grid { grid-template-columns: 1fr; }
+
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+
+    .hero-trust { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .trust-sep { display: none; }
+
+    .price-card { padding: 36px 28px; }
+  }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.2rem; }
+    .hero-actions { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-secondary { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-brand">Call<span>Flow</span></div>
+      <a href="activate.html" class="nav-cta">Activate Your Receptionist</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Live · 24/7 Receptionist</div>
+    <h1>Never Miss Another<br><em>Service Call.</em></h1>
+    <p class="hero-sub">A 24/7 virtual receptionist that answers your business calls, captures every lead, and helps you book more jobs — without hiring staff.</p>
+    <div class="hero-actions">
+      <a href="activate.html" class="btn-primary">Activate Your Receptionist</a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><div class="trust-check"></div> No contracts</div>
+      <div class="trust-sep">·</div>
+      <div class="trust-item"><div class="trust-check"></div> Setup in minutes</div>
+      <div class="trust-sep">·</div>
+      <div class="trust-item"><div class="trust-check"></div> $8 / month</div>
+      <div class="trust-sep">·</div>
+      <div class="trust-item"><div class="trust-check"></div> Cancel anytime</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title" style="color:#fff;">Missed Calls Mean<br>Lost Revenue</h2>
+    <p class="section-body">When a homeowner needs an electrician or plumber, they call the first number they find. If no one answers, they move on to the next company. You never even know the job existed.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="prob-icon">🌙</div>
+        <div class="prob-text">
+          <strong>After-Hours Calls Go Unanswered</strong>
+          <span>Most service requests come in evenings and weekends. Your phone rings — and no one's there.</span>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="prob-icon">🔧</div>
+        <div class="prob-text">
+          <strong>Your Team Is On the Job</strong>
+          <span>When you're on a site, you can't pick up every call. Busy crews miss real, paying customers.</span>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="prob-icon">💸</div>
+        <div class="prob-text">
+          <strong>Hiring Staff Is Expensive</strong>
+          <span>A full-time receptionist costs $35,000+ per year. That's not an option for most small businesses.</span>
+        </div>
+      </div>
+      <div class="problem-card">
+        <div class="prob-icon">📉</div>
+        <div class="prob-text">
+          <strong>Lost Calls = Lost Jobs</strong>
+          <span>Every missed call is a job that went to your competitor. The revenue loss adds up fast.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="container">
+    <div class="solution-grid">
+      <div>
+        <div class="section-label">The Solution</div>
+        <h2 class="section-title">Your 24/7<br>Receptionist</h2>
+        <p class="section-body">CallFlow answers your calls around the clock — professionally, reliably, and immediately. Every caller gets a real response, every lead gets captured.</p>
+        <ul class="solution-list">
+          <li><div class="sol-dot"><span>1</span></div> Answers every incoming call, day or night, within seconds.</li>
+          <li><div class="sol-dot"><span>2</span></div> Collects the caller's name, number, and service request clearly.</li>
+          <li><div class="sol-dot"><span>3</span></div> Books appointments directly to your schedule without the back-and-forth.</li>
+          <li><div class="sol-dot"><span>4</span></div> Forwards urgent calls to you immediately when it matters most.</li>
+          <li><div class="sol-dot"><span>5</span></div> Sends you a clean call summary the moment each call ends.</li>
+        </ul>
+      </div>
+      <div class="solution-visual">
+        <div class="call-mock">
+          <div class="call-header">
+            <div class="call-avatar">📞</div>
+            <div class="call-info">
+              <strong>Incoming Call</strong>
+              <span>(401) 555-0182 · Just now</span>
+            </div>
+            <div class="call-status">Answered</div>
+          </div>
+          <div class="call-items">
+            <div class="call-item">
+              <div class="call-item-icon">👤</div>
+              <div class="call-item-text">
+                <strong>Caller: Mike Henderson</strong>
+                <span>Name captured</span>
+              </div>
+            </div>
+            <div class="call-item">
+              <div class="call-item-icon">🏠</div>
+              <div class="call-item-text">
+                <strong>Request: Leaking kitchen pipe</strong>
+                <span>Service type captured</span>
+              </div>
+            </div>
+            <div class="call-item">
+              <div class="call-item-icon">📅</div>
+              <div class="call-item-text">
+                <strong>Appointment booked: Tue 9 AM</strong>
+                <span>Added to your schedule</span>
+              </div>
+            </div>
+            <div class="call-item">
+              <div class="call-item-icon">📩</div>
+              <div class="call-item-text">
+                <strong>Summary sent to your phone</strong>
+                <span>Delivered instantly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="container">
+    <div style="text-align:center; max-width:560px; margin:0 auto;">
+      <div class="section-label">How It Works</div>
+      <h2 class="section-title">Simple Setup</h2>
+      <p class="section-body" style="margin:0 auto;">No technical experience needed. No hardware to install. You can be live and capturing calls in under 10 minutes.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Get Your Number</h3>
+        <p>We provide a dedicated CallFlow phone number. Add it to your website, Google Business profile, and any place customers look you up.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>We Answer Every Call</h3>
+        <p>CallFlow picks up immediately, greets callers with your business name, and handles the entire conversation professionally.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>You Receive Booked Jobs</h3>
+        <p>Get instant summaries with caller details, service needs, and confirmed appointments — ready to show up and do the work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Simple Pricing</h2>
+      <p class="section-body" style="margin:0 auto;">One straightforward plan. Everything included. No surprises on your bill.</p>
+    </div>
+    <div class="pricing-center">
+      <div class="price-card">
+        <div class="price-badge">🚀 Early Adopter Pricing</div>
+        <div class="price-plan">Early Adopter Plan</div>
+        <div class="price-amount">
+          <span class="price-dollar">$</span>
+          <span class="price-number">8</span>
+          <span class="price-period">/ month</span>
+        </div>
+        <p class="price-desc">Locked in forever — this price won't increase for early members.</p>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><div class="feat-check"></div> 24/7 call answering</li>
+          <li><div class="feat-check"></div> Caller name & number capture</li>
+          <li><div class="feat-check"></div> Appointment booking</li>
+          <li><div class="feat-check"></div> Instant call summaries to your phone</li>
+          <li><div class="feat-check"></div> Urgent call forwarding</li>
+          <li><div class="feat-check"></div> Easy setup in minutes</li>
+          <li><div class="feat-check"></div> Cancel anytime</li>
+        </ul>
+        <a href="activate.html" class="btn-primary full">Start for $8/month</a>
+        <p class="price-note">No contracts. No hidden fees.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div style="max-width:560px;">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Common Questions</h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h4>Does this replace my existing business phone number?</h4>
+        <p>We provide you with a dedicated CallFlow number that you add to your website, Google Business profile, and anywhere else customers find you. Calls come in through that number and can still be forwarded directly to you whenever needed.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can urgent calls be forwarded directly to me?</h4>
+        <p>Yes. You can set keywords or situation types — like emergencies or high-priority jobs — that trigger an immediate call transfer to your mobile so you never miss what matters most.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Does it work after hours and on weekends?</h4>
+        <p>Absolutely. CallFlow is active 24 hours a day, 7 days a week, 365 days a year — including nights, weekends, and holidays. Every call gets answered.</p>
+      </div>
+      <div class="faq-item">
+        <h4>How fast can I get set up?</h4>
+        <p>Most businesses are live within 10 minutes of signing up. We provision your dedicated number instantly — just add it to your website and Google Business profile and you're ready to go.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Is there a contract or commitment?</h4>
+        <p>None at all. CallFlow is month-to-month. You can cancel at any time from your account settings — no calls needed, no fees, no questions asked.</p>
+      </div>
+      <div class="faq-item">
+        <h4>What types of businesses does this work for?</h4>
+        <p>CallFlow is built for local home service businesses — electricians, plumbers, HVAC technicians, general contractors, landscapers, roofers, and similar trades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Start Capturing Every Call Today.</h2>
+    <p>Join service businesses that never let a job opportunity slip through the cracks.</p>
+    <a href="activate.html" class="btn-primary">Activate Your Receptionist</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <strong>CallFlow</strong>
+        <span>Built for Local Service Businesses.</span>
+      </div>
+      <div class="footer-links">
+        <a href="/cdn-cgi/l/email-protection#4b232e2727240b282a27272d27243c652224"><span class="__cf_email__" data-cfemail="ed8588818182ad8e8c81818b81829ac38482">[email&#160;protected]</span></a>
+        <
