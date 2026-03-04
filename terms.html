@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — CallFlow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --accent: #2d62e0;
+    --accent-hover: #1a4fc4;
+    --text: #0f1f3d;
+    --text-mid: #4a5568;
+    --text-light: #718096;
+    --border: #e2e8f0;
+    --bg: #ffffff;
+    --bg-soft: #f7f9fc;
+    --green: #16a34a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, h4, .brand { font-family: 'Syne', sans-serif; }
+
+  nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .brand span { color: var(--accent); }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--accent); }
+  .back-link::before { content: '←'; font-size: 1rem; display: inline-block; transition: transform 0.2s; }
+  .back-link:hover::before { transform: translateX(-3px); }
+
+  main {
+    flex: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 64px 24px 100px;
+  }
+
+  .page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(45, 98, 224, 0.08);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .doc-section {
+    margin-bottom: 44px;
+  }
+
+  .doc-section h2 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .doc-section p {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .doc-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 14px 0;
+    padding-left: 4px;
+  }
+
+  .doc-section ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .doc-section ul li::before {
+    content: '–';
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .highlight-box {
+    background: rgba(45, 98, 224, 0.05);
+    border: 1px solid rgba(45, 98, 224, 0.15);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .highlight-box strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .contact-box {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-top: 48px;
+  }
+
+  .contact-box h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .contact-box p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .contact-box a {
+    color: #7da4f5;
+    text-decoration: none;
+  }
+
+  .contact-box a:hover { text-decoration: underline; }
+
+  footer {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 22px 24px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-inner span { font-size: 0.78rem; color: var(--text-light); }
+
+  .footer-links { display: flex; gap: 20px; }
+
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 1.9rem; }
+    main { padding: 44px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Call<span>Flow</span></a>
+    <a href="index.html" class="back-link">Back to site</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-eyebrow">Legal</div>
+    <h1>Terms of Service</h1>
+    <p>Last updated: March 2, 2026 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>1. Acceptance of Terms</h2>
+    <p>By signing up for or using CallFlow ("the Service"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the Service. These terms apply to all users of CallFlow, including business owners and their customers.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>2. Description of Service</h2>
+    <p>CallFlow provides an AI-powered virtual receptionist service for local home service businesses. The Service includes:</p>
+    <ul>
+      <li>A dedicated phone number for your business that is answered automatically 24/7.</li>
+      <li>AI-powered call handling, lead capture, and conversation management.</li>
+      <li>Appointment booking integrated with your Google Calendar.</li>
+      <li>SMS confirmation messages sent to callers who verbally consent during the call.</li>
+      <li>Call summaries and job notifications delivered to business owners and technicians.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>3. Eligibility</h2>
+    <p>You must be at least 18 years of age to sign up for CallFlow as a business owner. By using the Service, you represent that you have the legal authority to enter into these Terms on behalf of yourself or your business.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>4. Account Responsibilities</h2>
+    <p>As a CallFlow user, you are responsible for:</p>
+    <ul>
+      <li>Providing accurate and up-to-date business information during setup.</li>
+      <li>Ensuring your use of the Service complies with all applicable laws and regulations.</li>
+      <li>Not using CallFlow for any unlawful, deceptive, or harmful purpose.</li>
+      <li>Keeping your account credentials secure and confidential.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>5. SMS Messaging</h2>
+    <div class="highlight-box">
+      <strong>Opt-In:</strong> CallFlow sends SMS messages only to callers who have verbally consented during a phone call. By completing a booking through our AI receptionist, callers agree to receive a one-time appointment confirmation via SMS.<br><br>
+      <strong>Opt-Out:</strong> Recipients can reply <strong>STOP</strong> at any time to stop receiving messages. For help, reply <strong>HELP</strong>. Message and data rates may apply.
+    </div>
+    <p>CallFlow does not send unsolicited marketing messages. All SMS messages are transactional and service-related only. Business owners using CallFlow are responsible for ensuring their use of SMS messaging complies with applicable laws including the Telephone Consumer Protection Act (TCPA).</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>6. Pricing and Billing</h2>
+    <p>CallFlow is offered on a monthly subscription basis. Current pricing is displayed on our website. Early adopter pricing is locked in for the duration of your active subscription. We reserve the right to change pricing for new subscribers at any time with reasonable notice.</p>
+    <p>Subscriptions are billed monthly. You may cancel at any time and your service will remain active until the end of your current billing period. We do not offer refunds for partial months.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>7. Cancellation</h2>
+    <p>You may cancel your CallFlow subscription at any time by contacting us at the email below. There are no cancellation fees, no contracts, and no minimum commitment. Upon cancellation your dedicated phone number will be deactivated at the end of the billing period.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>8. Limitations of Service</h2>
+    <p>CallFlow is powered by AI and automation. While we strive for accuracy and reliability, we cannot guarantee that:</p>
+    <ul>
+      <li>Every call will be handled perfectly or without errors.</li>
+      <li>The Service will be available 100% of the time without interruption.</li>
+      <li>All appointments booked through the Service will be accurate in every circumstance.</li>
+    </ul>
+    <p>Business owners are responsible for reviewing call summaries and confirming appointments with their customers where necessary.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>9. Intellectual Property</h2>
+    <p>All content, branding, and technology associated with CallFlow is the property of CallFlow and its operators. You may not copy, reproduce, or distribute any part of the Service without written permission.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>10. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, CallFlow shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Service, including but not limited to missed calls, lost business, or scheduling errors. Our total liability to you shall not exceed the amount you paid us in the most recent 30-day period.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>11. Termination</h2>
+    <p>We reserve the right to suspend or terminate your access to CallFlow at any time if we determine you are using the Service in violation of these Terms, applicable law, or in a manner that harms other users or third parties.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>12. Changes to These Terms</h2>
+    <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the Service after changes are posted constitutes acceptance of the revised Terms.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>13. Governing Law</h2>
+    <p>These Terms are governed by the laws of the United States. Any disputes arising from these Terms or your use of CallFlow shall be resolved through good-faith negotiation or, if necessary, binding arbitration.</p>
+  </div>
+
+  <div class="contact-box">
+    <h3>Questions about these terms?</h3>
+    <p>Contact us at <a href="mailto:jdoe89524472@gmail.com">jdoe89524472@gmail.com</a> and we'll respond within 1 business day.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 CallFlow · Built for Local Service Businesses.</span>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:jdoe89524472@gmail.com">jdoe89524472@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

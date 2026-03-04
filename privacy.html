@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — CallFlow</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --accent: #2d62e0;
+    --accent-hover: #1a4fc4;
+    --text: #0f1f3d;
+    --text-mid: #4a5568;
+    --text-light: #718096;
+    --border: #e2e8f0;
+    --bg: #ffffff;
+    --bg-soft: #f7f9fc;
+    --green: #16a34a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3, h4, .brand { font-family: 'Syne', sans-serif; }
+
+  nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+
+  .brand span { color: var(--accent); }
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover { color: var(--accent); }
+  .back-link::before { content: '←'; font-size: 1rem; display: inline-block; transition: transform 0.2s; }
+  .back-link:hover::before { transform: translateX(-3px); }
+
+  main {
+    flex: 1;
+    max-width: 780px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 64px 24px 100px;
+  }
+
+  .page-header {
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(45, 98, 224, 0.08);
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .page-header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 300;
+  }
+
+  .doc-section {
+    margin-bottom: 44px;
+  }
+
+  .doc-section h2 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--navy);
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .doc-section p {
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .doc-section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 14px 0;
+    padding-left: 4px;
+  }
+
+  .doc-section ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.93rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .doc-section ul li::before {
+    content: '–';
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .highlight-box {
+    background: rgba(45, 98, 224, 0.05);
+    border: 1px solid rgba(45, 98, 224, 0.15);
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  .highlight-box strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .contact-box {
+    background: var(--navy);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-top: 48px;
+  }
+
+  .contact-box h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .contact-box p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .contact-box a {
+    color: #7da4f5;
+    text-decoration: none;
+  }
+
+  .contact-box a:hover { text-decoration: underline; }
+
+  footer {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    padding: 22px 24px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-inner span { font-size: 0.78rem; color: var(--text-light); }
+
+  .footer-links { display: flex; gap: 20px; }
+
+  .footer-links a {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .page-header h1 { font-size: 1.9rem; }
+    main { padding: 44px 20px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">Call<span>Flow</span></a>
+    <a href="index.html" class="back-link">Back to site</a>
+  </div>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-eyebrow">Legal</div>
+    <h1>Privacy Policy</h1>
+    <p>Last updated: March 2, 2026 &nbsp;·&nbsp; Effective immediately</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>1. Who We Are</h2>
+    <p>CallFlow ("we", "us", or "our") is an AI-powered receptionist service built for local home service businesses. We provide businesses with a dedicated phone number, automated call answering, appointment booking, and SMS confirmation services. This Privacy Policy explains how we collect, use, and protect information when you interact with CallFlow.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>2. Information We Collect</h2>
+    <p>We collect information in the following ways:</p>
+    <ul>
+      <li>Information you provide when signing up — including your name, business name, email address, and phone number.</li>
+      <li>Information collected during calls — including caller name, phone number, service address, and description of service requests.</li>
+      <li>Appointment information — dates, times, and job details created during the booking process.</li>
+      <li>Usage information — how you interact with the CallFlow service and platform.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>3. How We Use Your Information</h2>
+    <p>We use the information we collect to:</p>
+    <ul>
+      <li>Provide and operate the CallFlow service on your behalf.</li>
+      <li>Answer incoming calls and book appointments for your business.</li>
+      <li>Send SMS confirmation messages to callers who have verbally consented during the call.</li>
+      <li>Send call summaries and job notifications to business owners and technicians.</li>
+      <li>Improve and maintain the performance and reliability of our service.</li>
+      <li>Respond to your support requests and inquiries.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>4. SMS Messaging & Opt-In Consent</h2>
+    <div class="highlight-box">
+      <strong>Important:</strong> By booking an appointment over the phone through CallFlow, callers verbally consent to receive an SMS confirmation message. Callers may opt out at any time by replying <strong>STOP</strong> to any message. For help, reply <strong>HELP</strong>. Message and data rates may apply.
+    </div>
+    <p>We do not send marketing or promotional SMS messages. All messages sent through CallFlow are transactional — appointment confirmations, job notifications, and service-related updates only.</p>
+    <p>We do not sell or share phone numbers collected during calls with any third parties for marketing purposes.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>5. How We Share Information</h2>
+    <p>We do not sell your personal information. We may share information only in the following limited circumstances:</p>
+    <ul>
+      <li>With service providers who help us operate CallFlow — including ElevenLabs (AI voice), Make.com (automation), Google Calendar (scheduling), and Twilio (SMS delivery).</li>
+      <li>With the business owner whose number the caller dialed — call details and appointment information are shared with that business as part of the core service.</li>
+      <li>When required by law or to protect the rights, safety, or property of CallFlow or others.</li>
+    </ul>
+  </div>
+
+  <div class="doc-section">
+    <h2>6. Data Retention</h2>
+    <p>We retain call and appointment data for as long as necessary to provide the service. Business owners may request deletion of their data at any time by contacting us at the email address below. Caller data collected during service calls is retained only as long as needed to fulfill the appointment and deliver confirmations.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>7. Data Security</h2>
+    <p>We take reasonable measures to protect the information we collect from unauthorized access, loss, or misuse. However, no system is completely secure and we cannot guarantee absolute security of your data.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>8. Children's Privacy</h2>
+    <p>CallFlow is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+  </div>
+
+  <div class="doc-section">
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of CallFlow after changes constitutes acceptance of the updated policy.</p>
+  </div>
+
+  <div class="contact-box">
+    <h3>Questions about this policy?</h3>
+    <p>Contact us at <a href="mailto:jdoe89524472@gmail.com">jdoe89524472@gmail.com</a> and we'll respond within 1 business day.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 CallFlow · Built for Local Service Businesses.</span>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:jdoe89524472@gmail.com">jdoe89524472@gmail.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
